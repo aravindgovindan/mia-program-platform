@@ -1,13 +1,17 @@
 // App.js
 import React from 'react';
-import Tree from './Tree';
+import Tree from './components/Tree';
 import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <h1>Hierarchical Tree App</h1>
-      <Tree />
+    <div className="app flex flex-column">
+      <div className='flex flex-column ba b--blue ph3 flex-grow-1'>
+        <div className='pv3 f6'>
+          Add required label and description for each level
+        </div>
+        <Tree />
+      </div>
     </div>
   );
 }

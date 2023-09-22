@@ -1,5 +1,7 @@
 // Column.js
 import React, { useState } from 'react';
+import { BiEdit } from 'react-icons/bi';
+import ListItem from './ListItem';
 
 function Column({ title, nodes, selectedNode, columnIndex, onNodeSelect, onEditModeToggle }) {
   const [editMode, setEditMode] = useState(false);
@@ -7,24 +9,24 @@ function Column({ title, nodes, selectedNode, columnIndex, onNodeSelect, onEditM
     setEditMode(prevEditMode => !prevEditMode);
   }
   return (
-    <div className="column">
-      <h2>{title}</h2>
-      <button onClick={toggleEdit}>Toggle Edit</button>
+    <div className="column ph2 mr3 bg-light-gray">
+      <div className='pt3 pb1 flex justify-between'>
+        <div className='b'>{title}</div>
+        <button onClick={toggleEdit}><BiEdit /></button>
+      </div>
       <ul>
         {nodes.map((node, i) => (
           <li
             key={title + node}
-            className={selectedNode === i ? 'selected' : ''}
             onClick={() => onNodeSelect(i, columnIndex)}
           >
-            {editMode ? (
-              <input type="text" defaultValue={node} />
-            ) : (
-              node
-            )}
+            <ListItem nodeName={node} isSelected={selectedNode === i} />
           </li>
         ))}
       </ul>
+      <div>
+        <div className='add-button ba br2 b--blue bw1 dark-blue b f7 pa2 mv3 flex justify-center'>Add</div>
+      </div>
     </div>
   );
 }

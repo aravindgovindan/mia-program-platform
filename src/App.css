@@ -1,5 +1,8 @@
 /* App.css */
+@import "tachyons";
+
 .app {
-  text-align: center;
   padding: 20px;
+  height: 100vh;
+  /* overflow-y: auto; */
 }

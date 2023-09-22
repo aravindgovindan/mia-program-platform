@@ -1,16 +1,15 @@
 /* Column.css */
 .column {
-  border: 1px solid #ccc;
-  padding: 10px;
+  /* border: 1px solid #ccc; */
+  /* background-color: #f0f0f0; */
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
-  min-width: 200px;
+  min-width: 260px;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
-.column h2 {
-  margin: 0;
-}
 
 ul {
   list-style: none;
@@ -19,13 +18,12 @@ ul {
 
 li {
   cursor: pointer;
-  padding: 5px;
 }
 
 li.selected {
-  background-color: #f0f0f0;
+  background-color: #ccc;
 }
 
-button {
-  margin-top: 10px;
+.add-button {
+  width: 50px;
 }

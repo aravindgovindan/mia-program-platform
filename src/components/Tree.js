@@ -1,7 +1,7 @@
 // Tree.js
 import React, { useState } from 'react';
 import Column from './Column';
-import { treeData, levelData } from './data';
+import { treeData, levelData } from '../data';
 import './Column.css';
 
 function Tree() {
@@ -36,8 +36,8 @@ function Tree() {
   };
 
   return (
-    <div className="tree">
-      <div className="tree-container">
+    <div className="tree flex-grow-1 flex flex-column">
+      <div className="tree-container flex-grow-1 flex">
         {levels.map((level, index) => {
           return (
             <Column
