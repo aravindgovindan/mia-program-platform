@@ -1,9 +1,9 @@
 import React from "react";
 import Tree from '../components/Tree';
 
-function ClickThrough() {
+function NewCoreStructure() {
   return (
-    <div className="flex flex-column pt3 pl3">
+    <div className="flex flex-column pt3 pl3 mr3">
       <div className='flex flex-column ba b--blue pa3 flex-grow-1'>
         <div className='pb3 f6'>
           Add required label and description for each level
@@ -14,4 +14,4 @@ function ClickThrough() {
   )
 }
 
-export default ClickThrough;
+export default NewCoreStructure;

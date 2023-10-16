@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiFillEdit, AiOutlineDelete } from 'react-icons/ai';
 
-function ListItem({ nodeName, isSelected }) {
+function NodeItem({ nodeName, isSelected }) {
 
   const borderStyle = isSelected ? 'b--blue bw2 br3' : 'b--moon-gray br2'
 
@@ -20,4 +20,4 @@ function ListItem({ nodeName, isSelected }) {
 
 }
 
-export default ListItem;
+export default NodeItem;
