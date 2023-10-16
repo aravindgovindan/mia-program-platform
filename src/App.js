@@ -1,16 +1,22 @@
 // App.js
 import React from 'react';
-import Tree from './components/Tree';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import ClickThrough from './pages/ClickThrough';
+import NavBar from './components/NavBar';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="app flex flex-column">
-      <div className='flex flex-column ba b--blue ph3 flex-grow-1'>
-        <div className='pv3 f6'>
-          Add required label and description for each level
-        </div>
-        <Tree />
+    <div className='app'>
+      <NavBar />
+      <div className='flex flex-column w-100'>
+        <Header />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<ClickThrough />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </div>
   );
