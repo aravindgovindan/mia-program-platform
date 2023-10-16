@@ -96,18 +96,15 @@ export const treeData = [
         name: 'Unit 6',
         children: [
           {
-            name: 'Week 1',
+            name: 'Week 5',
             children: []
           }, {
-            name: 'Week 2',
+            name: 'Week 6',
             children: []
           }, {
-            name: 'Week 3',
+            name: 'Week 7',
             children: []
-          }, {
-            name: 'Week 4',
-            children: []
-          },
+          }, 
         ]
       }, {
         name: 'Unit 7',
@@ -123,6 +120,9 @@ export const treeData = [
             children: []
           }, {
             name: 'Week 4',
+            children: []
+          }, {
+            name: 'Week 5',
             children: []
           },
         ]
@@ -140,6 +140,23 @@ export const treeData = [
             children: []
           }, {
             name: 'Week 8',
+            children: []
+          },
+        ]
+      }, {
+        name: 'Unit 9',
+        children: [
+          {
+            name: 'Week 1',
+            children: []
+          }, {
+            name: 'Week 2',
+            children: []
+          }, {
+            name: 'Week 3',
+            children: []
+          }, {
+            name: 'Week 4',
             children: []
           },
         ]
@@ -184,23 +201,6 @@ export const treeData = [
         ]
       }, {
         name: 'Unit 3',
-        children: [
-          {
-            name: 'Week 1',
-            children: []
-          }, {
-            name: 'Week 2',
-            children: []
-          }, {
-            name: 'Week 3',
-            children: []
-          }, {
-            name: 'Week 4',
-            children: []
-          },
-        ]
-      }, {
-        name: 'Unit 4',
         children: [
           {
             name: 'Week A',
