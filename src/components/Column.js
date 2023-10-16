@@ -1,6 +1,6 @@
 // Column.js
 import React, { useState } from 'react';
-import ListItem from './ListItem';
+import NodeItem from './NodeItem';
 
 function Column({ title, nodes, selectedNode, columnIndex, onNodeSelect, onEditModeToggle }) {
   const [editMode, setEditMode] = useState(false);
@@ -16,7 +16,7 @@ function Column({ title, nodes, selectedNode, columnIndex, onNodeSelect, onEditM
             key={title + node}
             onClick={() => onNodeSelect(i, columnIndex)}
           >
-            <ListItem nodeName={node} isSelected={selectedNode === i} />
+            <NodeItem nodeName={node} isSelected={selectedNode === i} />
           </li>
         ))}
       </ul>
