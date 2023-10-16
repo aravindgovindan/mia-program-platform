@@ -1,6 +1,5 @@
 // Column.js
 import React, { useState } from 'react';
-import { BiEdit } from 'react-icons/bi';
 import ListItem from './ListItem';
 
 function Column({ title, nodes, selectedNode, columnIndex, onNodeSelect, onEditModeToggle }) {
@@ -10,10 +9,7 @@ function Column({ title, nodes, selectedNode, columnIndex, onNodeSelect, onEditM
   }
   return (
     <div className="column ph2 mr3 bg-light-gray">
-      <div className='pt3 pb1 flex justify-between'>
-        <div className='b'>{title}</div>
-        <button onClick={toggleEdit}><BiEdit /></button>
-      </div>
+      <div className='pt3 pb1 flex justify-between'>{title}</div>
       <ul>
         {nodes.map((node, i) => (
           <li

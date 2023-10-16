@@ -2,7 +2,16 @@
 @import "tachyons";
 
 .app {
-  padding: 20px;
   height: 100vh;
+  display: flex;
   /* overflow-y: auto; */
+}
+
+.sidenav {
+  height: 100vh;
+  width: 48px;
+  background-color: rgba(60, 100, 177, 0.06);
+}
+.sidenav.open {
+  width: 240px;
 }
