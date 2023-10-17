@@ -28,7 +28,7 @@ function NavBar({ navItems }) {
             <input type='checkbox' checked={showIcons} onChange={toggleIcons}></input>
             <span className="pointer" onClick={toggleIcons}> Show Icons on collapse</span>
           </div>
-          {(navItems || []).map(item => <NavItem key={item.label} label={item.label} icon={item.icon} />)}
+          {(navItems || []).map(item => <NavItem key={item.label} label={item.label} icon={item.icon} link={item.link} />)}
         </div>
       </> : <>
         <div className={`sidenav ${open ? 'open' : ''}`}>
@@ -41,7 +41,7 @@ function NavBar({ navItems }) {
               <input type='checkbox' checked={showIcons} onChange={toggleIcons}></input>
               <span className="pointer" onClick={toggleIcons}> Show Icons on collapse</span>
             </div>}
-            {(navItems || []).map(item => <NavItem key={item.label} label={item.label} icon={item.icon} collapsed={!open} />)}
+            {(navItems || []).map(item => <NavItem key={item.label} label={item.label} icon={item.icon} collapsed={!open} link={item.link} />)}
           </div>
         </div>
       </>
