@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
-import Header from './components/Header';
+// import Header from './components/Header';
 import NewCoreStructure from './pages/NewCoreStructure';
 
 function App() {
@@ -18,8 +18,7 @@ function App() {
   return (
     <div className='app'>
       <NavBar navItems={navItems} />
-      <div className='flex flex-column w-100'>
-        <Header />
+      <div className='w-100 p4 flex flex-column h-100 overflow-y-auto'>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<NewCoreStructure />} />
