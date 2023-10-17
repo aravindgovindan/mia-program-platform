@@ -1,18 +1,18 @@
 import React from "react";
 import Icon from "./Icon";
-import { useNavigate } from "react-router-dom";
 
-function NavItem({ label, icon, collapsed, link }) {
+function NavItem({ label, icon, collapsed, link, selected, onSelect }) {
 
-  const navigate = useNavigate()
-  const handleClick = () => {
-    navigate(link || '/')
+  const handleClick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    onSelect(label, link || '/')
   }
 
   return (
     <div
       title={label}
-      className={`pointer pv2 mv1 flex f4 ${collapsed ? 'justify-center' : 'justify-start'}`}
+      className={`pointer ph2 pv2 mb2 flex f4 ${collapsed ? 'justify-center' : 'justify-start'} ${selected ? 'bg-gray' : ''}`}
       onClick={handleClick}
     >
       <Icon icon={icon} />

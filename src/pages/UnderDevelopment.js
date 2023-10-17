@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function UnderDevelopmentPage() {
   return (
@@ -8,7 +7,6 @@ function UnderDevelopmentPage() {
       <p style={styles.description}>
         Check back later.
       </p>
-      <Link to="/" style={styles.link}>Back to home</Link>
     </div>
   );
 }
