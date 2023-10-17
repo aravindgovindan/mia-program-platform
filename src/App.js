@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 // import Header from './components/Header';
 import NewCoreStructure from './pages/NewCoreStructure';
 import PhonicsInterventionStructure from './pages/PhonicsInterventionStructure';
+import UnderDevelopmentPage from './pages/UnderDevelopment';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<NewCoreStructure />} />
           <Route path="/PhonicsIntervention" element={<PhonicsInterventionStructure />} />
+          <Route path="/BaseStructure" element={<UnderDevelopmentPage />} />
         </Routes>
       </div>
     </div>
