@@ -1,13 +1,12 @@
 import React from "react";
 import Tree from '../components/Tree';
-import { treeData } from '../data';
+import { piData as treeData } from '../data';
 
-function NewCoreStructure() {
+function PhonicsInterventionStructure() {
 
   const levelData = [
-    {name: 'Grade', children: treeData.map(i => i.name)},
-    {name: 'Unit', children: treeData[0].children.map(i => i.name)},
-    {name: 'Week', children: treeData[0].children[0].children.map(i => i.name)},
+    {name: 'Level', children: treeData.map(i => i.name)},
+    {name: 'Skill', children: treeData[0].children.map(i => i.name)},
   ]
 
   return (
@@ -22,4 +21,4 @@ function NewCoreStructure() {
   )
 }
 
-export default NewCoreStructure;
+export default PhonicsInterventionStructure;

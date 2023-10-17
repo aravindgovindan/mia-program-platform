@@ -1,15 +1,9 @@
 // Tree.js
 import React, { useState } from 'react';
 import Column from './Column';
-import { treeData, levelData } from '../data';
 import './Column.css';
 
-function Tree() {
-  const levelData = [
-    { name: 'Grade', children: ['Grade K', 'Grade 1', 'Grade 2'] },
-    { name: 'Unit', children: ['Unit 1', 'Unit 2', 'Unit 3', 'Unit 4'] },
-    { name: 'Week', children: ['Week 1', 'Week 2', 'Week 3', 'Week 4'] }
-  ]
+function Tree({ treeData, levelData }) {
   const [selectedNodes, setSelectedNodes] = useState(levelData.map(i => 0));
   const [levels, setLevels] = useState(levelData)
 
