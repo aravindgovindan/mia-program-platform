@@ -18,7 +18,7 @@ function App() {
   return (
     <div className='app'>
       <NavBar navItems={navItems} />
-      <div className='w-100 p4 flex flex-column h-100 overflow-y-auto'>
+      <div className='w-100 pt4 pl4 flex flex-column h-100 overflow-y-auto'>
         <Routes>
           <Route path="/" element={<NewCoreStructure />} />
           <Route path="/PhonicsIntervention" element={<PhonicsInterventionStructure />} />
