@@ -12,6 +12,42 @@
   width: 48px;
   background-color: rgba(60, 100, 177, 0.06);
 }
+
 .sidenav.open {
   width: 240px;
+}
+
+.accent {
+  color: rgba(60, 100, 177);
+}
+
+.bg-accent {
+  background: rgba(60, 100, 177);
+}
+
+.b--accent {
+  border-color: rgba(60, 100, 177);
+}
+
+.b--light-accent {
+  border-color: rgba(60, 100, 177, 0.5);
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+.overlay-container {
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  max-width: 50%;
+  top: 15%;
 }
