@@ -30,7 +30,7 @@ function NavBar({ navItems }) {
       {!showIcons ? <>
         <div
           className={`flex justify-between pa2 ${open ? '' : 'absolute'}`}
-          style={{ transition: "all 0.3s ease-in", backgroundColor: "rgba(10, 48, 120, 0.2)" }}
+          style={{ transition: "width 0.3s ease-in", backgroundColor: "rgba(10, 48, 120, 0.2)" }}
         >
           {open && <div className="f3 b pl3">Mia</div>}
           <div className="pointer grow ph1 f3" onClick={toggleOpen}><GiHamburgerMenu /></div>
@@ -53,7 +53,7 @@ function NavBar({ navItems }) {
       </> : <>
         <div
           className={`sidenav ${open ? 'open' : ''}`}
-          style={{ transition: `${!open ? 'all 0.3s ease-out' : ''}`}}
+          style={{ transition: `${!open ? 'width 0.3s ease-out' : ''}`}}
         >
           <div className="flex justify-between pa2" style={{ backgroundColor: "rgba(10, 48, 120, 0.2)" }}>
             {open && <div className="f3 b pl3">Mia</div>}

@@ -16,7 +16,7 @@ function NavItem({ label, icon, collapsed, link, selected, onSelect }) {
       onClick={handleClick}
     >
       <Icon icon={icon} />
-      {!collapsed && <div className="ph2 f5">{label}</div>}
+      {!collapsed && <div className="ph2 f6">{label}</div>}
     </div>
   )
 }
