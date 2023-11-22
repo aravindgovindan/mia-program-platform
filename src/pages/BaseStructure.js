@@ -1,20 +1,39 @@
 import React, { useState } from "react";
+import LevelDropdown from "../components/LevelDropdown";
 
 function BaseStructure() {
 
+  const levelOptions = [
+    { id: 'grade', label: 'Grade' },
+    { id: 'unit', label: 'Unit' },
+    { id: 'week', label: 'Week' },
+    { id: 'day', label: 'Day' },
+    { id: 'skill', label: 'Skill' },
+    { id: 'skillCategory', label: 'Skill Category' },
+  ]
   const [formOpen, setFormOpen] = useState(false);
-  const [levels, setLevels] = useState([{label: '', id:''}])
+  const [levels, setLevels] = useState([{ label: '', id: 'level-1' }])
 
   const handleCreateButtonClick = () => {
     setFormOpen(true)
   }
 
-  const handleCloseOverlay = () => {
+  const handleCloseOverlay = () => { 
     setFormOpen(false)
-  }
+   }
 
   const handleAddLevel = () => {
+    setLevels([...levels, { label: '', id: `level-${levels.length + 1}` }])
+  }
 
+  const handleLevelSelect = (current, newValue) => {
+    const selectedOption = levelOptions.find(option => option.id === newValue)
+    const changedIndex = levels.findIndex(level => level.id === current)
+    setLevels([...levels.slice(0, changedIndex), selectedOption, ...levels.slice(changedIndex + 1)])
+  }
+
+  const removeLevel = (id) => {
+    setLevels(levels.filter(level => level.id !== id))
   }
 
   const StructureDetails = () => <>
@@ -34,7 +53,7 @@ function BaseStructure() {
   </>
 
   const StructureOverlay = () => <>
-    <div className="overlay bg-white ba br2 b--moon-gray relative flex flex-column" style={{ minHeight: '300px', width: '720px' }}>
+    <div className="overlay bg-white ba br2 b--moon-gray relative flex flex-column" style={{ minHeight: '300px', width: '75%' }}>
 
       <div className="flex justify-between ph2 mh1 pv3 bb bw1 b--light-gray">
         <div className="b f6">Create Base Structure</div>
@@ -43,13 +62,28 @@ function BaseStructure() {
 
       <div className="flex-grow-1 pv2 ph2 flex f7">
         <div className="ba b--light-accent w-50 pa2 flex flex-column">
-          <div>Program Structure Levels <span className="red f6">*</span></div>
-          <div className="flex justify-start pv2"><div
-            onClick={handleAddLevel}
-            className="dim pointer accent bg-white pa2 br2 b ba b--accent flex justify-center items-center"
-          >
-            Add Level
-          </div></div>
+          <div className="pb2">Program Structure Levels <span className="red f6">*</span></div>
+          {
+            levels.map(level => <LevelDropdown
+              key={level.id}
+              value={level.id}
+              options={levelOptions}
+              onLevelSelect={handleLevelSelect}
+              deletable={levels.length > 1}
+              onDelete={removeLevel}
+            />)
+          }
+
+          <div className="flex justify-start pv2">
+            {levelOptions.length > levels.length ? <div
+              onClick={handleAddLevel}
+              className="dim pointer accent bg-white pa2 ml1 br2 b ba b--accent flex justify-center items-center"
+            >
+              Add Level
+            </div> : <div className="not-allowed moon-gray bg-white pa2 ml1 br2 b ba b--moon-gray flex justify-center items-center">Add Level
+            </div>
+            }
+          </div>
         </div>
 
         <div className=" w-50 ml2">

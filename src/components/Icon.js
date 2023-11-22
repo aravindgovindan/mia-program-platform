@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { AiFillEdit, AiOutlineDelete } from 'react-icons/ai';
+import { AiFillEdit, AiOutlineDelete, AiFillCaretDown } from 'react-icons/ai';
 import { GiForwardField } from "react-icons/gi";
 import { RiSpeakFill} from 'react-icons/ri';
 import {SiInstructure} from 'react-icons/si';
+import {PiDotsSixVerticalBold} from 'react-icons/pi';
 
 
 function Icon({ icon, className }) {
@@ -12,7 +13,9 @@ function Icon({ icon, className }) {
     delete: <AiOutlineDelete />,
     advance: <GiForwardField />,
     speak: <RiSpeakFill />,
-    base: <SiInstructure />
+    base: <SiInstructure />,
+    draggable: <PiDotsSixVerticalBold />,
+    caretDown: <AiFillCaretDown />,
   }
 
   const [showDefault, setShowDefault] = useState(iconList[icon] == undefined);
