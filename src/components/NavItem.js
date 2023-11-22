@@ -12,7 +12,7 @@ function NavItem({ label, icon, collapsed, link, selected, onSelect }) {
   return (
     <div
       title={label}
-      className={`pointer ph2 pv2 mb2 flex f4 ${collapsed ? 'justify-center' : 'justify-start'} ${selected ? 'bg-gray' : ''}`}
+      className={`pointer ph2 pv2 mb2 flex f4 items-center ${collapsed ? 'justify-center' : 'justify-start'} ${selected ? 'bg-gray' : ''}`}
       onClick={handleClick}
     >
       <Icon icon={icon} />

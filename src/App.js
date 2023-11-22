@@ -8,13 +8,15 @@ import NewCoreStructure from './pages/NewCoreStructure';
 import PhonicsInterventionStructure from './pages/PhonicsInterventionStructure';
 import UnderDevelopmentPage from './pages/UnderDevelopment';
 import BaseStructure from './pages/BaseStructure';
+import AttributeTable from './pages/AttributeTable';
 
 function App() {
 
   const navItems = [
-    { label: 'New Core Structure', icon: 'advance', link: '/' },
+    { label: 'New Core', icon: 'advance', link: '/' },
     { label: 'Phonics Intervention', icon: 'speak', link: '/PhonicsIntervention' },
     { label: 'Base Structure', icon: 'base', link: '/BaseStructure' },
+    { label: 'Attribute Table', icon: 'table', link: '/AttributeTable' },
   ]
 
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path="/" element={<NewCoreStructure />} />
           <Route path="/PhonicsIntervention" element={<PhonicsInterventionStructure />} />
           <Route path="/BaseStructure" element={<BaseStructure />} />
+          <Route path="/AttributeTable" element={<AttributeTable />} />
         </Routes>
       </div>
     </div>
