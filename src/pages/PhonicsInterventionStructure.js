@@ -1,6 +1,6 @@
 import React from "react";
 import Tree from '../components/Tree';
-import { piData as treeData } from '../data';
+import { piData as treeData } from '../data/sample-structure';
 
 function PhonicsInterventionStructure() {
 

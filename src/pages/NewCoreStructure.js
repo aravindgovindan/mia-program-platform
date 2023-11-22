@@ -1,6 +1,6 @@
 import React from "react";
 import Tree from '../components/Tree';
-import { treeData } from '../data';
+import { treeData } from '../data/sample-structure';
 
 function NewCoreStructure() {
 
