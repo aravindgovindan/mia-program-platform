@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi"
 import NavItem from "./NavItem";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function NavBar({ navItems }) {
 
+  const navigate = useNavigate()
+  const location = useLocation()
   const [open, setOpen] = useState(true);
   const [showIcons, setShowIcons] = useState(true);
-  const [selected, setSelected] = useState(navItems[0].label)
-  const navigate = useNavigate()
+  const [selected, setSelected] = useState(navItems.find(i => i.link === location.pathname)?.label)
 
   const toggleOpen = (e) => {
     e.preventDefault()
