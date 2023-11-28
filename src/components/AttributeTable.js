@@ -25,6 +25,10 @@ function AttributeTable() {
 
   const columns = useMemo(
     () => [
+      columnHelper.display({
+        id: 'serialNumber',
+        cell: info => <div className="tc ">{info.row.index + 1}</div>,
+      }),
       columnHelper.accessor('Entity', {
         header: 'Entity',
         cell: info => info.getValue(),
