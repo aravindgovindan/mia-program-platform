@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { AiFillEdit, AiOutlineDelete, AiFillCaretDown, AiFillDatabase } from 'react-icons/ai';
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { GiForwardField } from "react-icons/gi";
+import { HiMiniChevronUpDown } from "react-icons/hi2";
 import { RiSpeakFill} from 'react-icons/ri';
 import {SiInstructure} from 'react-icons/si';
 import {PiDotsSixVerticalBold} from 'react-icons/pi';
+import { VscBlank } from "react-icons/vsc";
 
 
 function Icon({ icon, className }) {
@@ -17,6 +20,10 @@ function Icon({ icon, className }) {
     draggable: <PiDotsSixVerticalBold />,
     caretDown: <AiFillCaretDown />,
     table: <AiFillDatabase />,
+    up: <FaChevronUp/>,
+    down: <FaChevronDown />,
+    updown: <HiMiniChevronUpDown />,
+    blank: <VscBlank />,
   }
 
   const [showDefault, setShowDefault] = useState(iconList[icon] == undefined);

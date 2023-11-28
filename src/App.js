@@ -8,7 +8,7 @@ import NewCoreStructure from './pages/NewCoreStructure';
 import PhonicsInterventionStructure from './pages/PhonicsInterventionStructure';
 import UnderDevelopmentPage from './pages/UnderDevelopment';
 import BaseStructure from './pages/BaseStructure';
-import AttributeTable from './pages/AttributeTable';
+import Attributes from './pages/Attributes';
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={<NewCoreStructure />} />
           <Route path="/PhonicsIntervention" element={<PhonicsInterventionStructure />} />
           <Route path="/BaseStructure" element={<BaseStructure />} />
-          <Route path="/AttributeTable" element={<AttributeTable />} />
+          <Route path="/AttributeTable" element={<Attributes />} />
         </Routes>
       </div>
     </div>
