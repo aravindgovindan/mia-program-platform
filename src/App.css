@@ -17,12 +17,20 @@
   width: 240px;
 }
 
+.accent-light {
+  color: rgba(60, 100, 177, 0.5);
+}
+
 .accent {
   color: rgba(60, 100, 177);
 }
 
 .bg-accent {
   background: rgba(60, 100, 177);
+}
+
+.bg-accent-light {
+  background: rgba(60, 100, 177, 0.16);
 }
 
 .b--accent {
@@ -50,4 +58,10 @@
 .overlay {
   max-width: 720px;
   top: 15%;
+}
+
+.mia-btn {
+  color: #fff;
+  background-color: #d2a237;
+  border-color: #c4952c;
 }

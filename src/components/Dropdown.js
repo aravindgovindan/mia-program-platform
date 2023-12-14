@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Icon from './Icon';
 
-function Dropdown({ value, options, onSelect, placeholder }) {
+function Dropdown({ value, options, onSelect, placeholder, className }) {
 
   const [selected, setSelected] = useState((options.find(option => option.id === value) || { id: '' }).id);
   const [open, setOpen] = useState(false);
@@ -19,9 +19,9 @@ function Dropdown({ value, options, onSelect, placeholder }) {
   }
 
   return (
-    <div className="flex relative items-center pv1">
+    <div className={ ` flex relative items-center pv1` }>
       <div
-        className={`flex items-center justify-between ba ph2 pv1 relative pointer bw1 b--light-accent`}
+        className={`${className} flex items-center justify-between ba ph2 pv1 relative pointer bw1 b--light-accent`}
         onClick={toggleOpen}
       >
         {selected.length ? <div className="flex-grow-1 pv1">{options.find(option => option.id === selected).label}</div>

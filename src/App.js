@@ -9,6 +9,7 @@ import PhonicsInterventionStructure from './pages/PhonicsInterventionStructure';
 import UnderDevelopmentPage from './pages/UnderDevelopment';
 import BaseStructure from './pages/BaseStructure';
 import Attributes from './pages/Attributes';
+import ComponentAssociation from './pages/ComponentAssociation';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     { label: 'Phonics Intervention', icon: 'speak', link: '/PhonicsIntervention' },
     { label: 'Base Structure', icon: 'base', link: '/BaseStructure' },
     { label: 'Attribute Table', icon: 'table', link: '/AttributeTable' },
+    { label: 'Component Association', icon:'link', link: '/ComponentAssociation' },
   ]
 
   return (
@@ -28,6 +30,7 @@ function App() {
           <Route path="/PhonicsIntervention" element={<PhonicsInterventionStructure />} />
           <Route path="/BaseStructure" element={<BaseStructure />} />
           <Route path="/AttributeTable" element={<Attributes />} />
+          <Route path="/ComponentAssociation" element={<ComponentAssociation />} />
         </Routes>
       </div>
     </div>
