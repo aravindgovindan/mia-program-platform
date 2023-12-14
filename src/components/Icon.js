@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiFillEdit, AiOutlineDelete, AiFillCaretDown, AiFillDatabase } from 'react-icons/ai';
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { FaChevronUp, FaChevronDown, FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { GiForwardField } from "react-icons/gi";
 import { HiMiniChevronUpDown } from "react-icons/hi2";
 import { RiSpeakFill} from 'react-icons/ri';
@@ -23,6 +23,8 @@ function Icon({ icon, className }) {
     up: <FaChevronUp/>,
     down: <FaChevronDown />,
     updown: <HiMiniChevronUpDown />,
+    right: <FaChevronRight />,
+    left: <FaChevronLeft />,
     blank: <VscBlank />,
   }
 
