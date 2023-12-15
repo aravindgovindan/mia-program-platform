@@ -22,19 +22,19 @@ function ComponentAssociation() {
             <div className="pv2">Decodable Readers</div>
           </div>
           <div className="w-10 flex flex-column">
-            <div className="b f7 pv2">Level Associated</div>
+            <div className="b f7 pv2 tc">Level Associated</div>
             <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
-            <div className="pv2">Unit</div>
+            <div className="pv2 tc">Unit</div>
           </div>
           <div className="w-10 flex flex-column">
-            <div className="b f7 pv2">Counts</div>
+            <div className="b f7 pv2 tc">Counts</div>
             <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
-            <div className="pv2">5</div>
+            <div className="pv2 tc">5</div>
           </div>
           <div className="w-10 flex flex-column">
-            <div className="b f7 pv2">Format</div>
+            <div className="b f7 pv2 tc">Format</div>
             <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
-            <div className="pv2">Print</div>
+            <div className="pv2 tc">Print</div>
           </div>
           <div className="flex-grow flex flex-column">
             <div className="b f7 pv2">&nbsp;</div>
