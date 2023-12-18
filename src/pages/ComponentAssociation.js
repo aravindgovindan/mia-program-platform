@@ -18,7 +18,7 @@ function ComponentAssociation() {
   const [display, setDisplay] = useState("Content Table")
   const [codes, setCodes] = useState()
   const [showList, setShowList] = useState(false)
-  const [compCodes, setCompCodes] = useState(['1', '2'])
+  const [compCodes, setCompCodes] = useState([])
 
 
   const onDropdownSelect = (option) => {
@@ -54,18 +54,23 @@ function ComponentAssociation() {
   const renderSection = () => {
     switch (display) {
       case "Component Association":
-        return <AssociateSection 
-          reset={reset} 
-          codes={codes} 
-          handleCodeChange={handleCodeChange} 
+        return <AssociateSection
+          reset={reset}
+          codes={codes}
+          handleCodeChange={handleCodeChange}
           goToMia={goToMia}
           importComponents={importComponents}
           showList={showList}
-          compCodes={compCodes} 
-          />
+          compCodes={compCodes}
+        />
       case "Content Table":
       default:
-        return <ContentTable associate={associate} gradeOptions={gradeOptions} node={node} onDropdownSelect={onDropdownSelect} />
+        return <ContentTable
+          associate={associate}
+          gradeOptions={gradeOptions}
+          node={node}
+          onDropdownSelect={onDropdownSelect}
+        />
     }
   }
 
@@ -80,7 +85,7 @@ function ComponentAssociation() {
 }
 
 
-function ContentTable ({associate, gradeOptions, node, onDropdownSelect}) {
+function ContentTable({ associate, gradeOptions, node, onDropdownSelect }) {
   return (
     <>
       <Dropdown options={gradeOptions} className={"w5 br2"} value={node} onSelect={onDropdownSelect} />
@@ -125,8 +130,7 @@ function ContentTable ({associate, gradeOptions, node, onDropdownSelect}) {
 }
 
 
-function AssociateSection({reset, codes, handleCodeChange, goToMia, importComponents, showList, compCodes}) {
-  const [codeList, setCodeList] = useState(compCodes);
+function AssociateSection({ reset, codes, handleCodeChange, goToMia, importComponents, showList, compCodes }) {
   return (
     <>
       <div className="w3 f6 flex items-center justify-between mv2 pa2 bn accent pointer dim" onClick={reset}>
@@ -141,7 +145,7 @@ function AssociateSection({reset, codes, handleCodeChange, goToMia, importCompon
         </div>
         <div className="flex flex-between w-100">
           <div className="w-75 mt2">
-            <textarea className="f6 w-100 b--light-accent br2" rows={4} placeholder=" Enter IDs separated by a space" value={codes} onChange={handleCodeChange} onBlur={handleCodeChange}></textarea>
+            <textarea className="f6 w-100 b--light-accent br2" rows={4} placeholder=" Enter IDs separated by a space" value={codes} onChange={handleCodeChange}></textarea>
           </div>
           <div className="flex flex-column items-center w-25">
             <div className="w-60 f7 flex items-center justify-between mv1 pa2 ba br2 pointer mh2 grow mia-btn" onClick={goToMia}>
@@ -155,7 +159,7 @@ function AssociateSection({reset, codes, handleCodeChange, goToMia, importCompon
         <div className="w4 f6 flex items-center justify-between mv2 pa2 ba b--accent bg-accent white pointer dim" onClick={importComponents}>
           Import <Icon icon="download" />
         </div>
-        {showList && <ComponentTable compCodes={codeList} />}
+        {showList && <ComponentTable compCodes={compCodes} />}
       </div>
     </>
   )
