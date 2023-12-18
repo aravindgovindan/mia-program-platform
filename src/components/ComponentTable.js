@@ -63,7 +63,6 @@ function ComponentTable({compCodes}) {
       columnHelper.accessor('title', {
         header: 'Component Title',
         cell: info => info.getValue(),
-        header: () => <span>Attribute Name</span>,
         footer: info => info.column.id,
       }),
       columnHelper.accessor('type', {
