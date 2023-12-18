@@ -3,87 +3,7 @@ import Dropdown from "../components/Dropdown";
 import Icon from "../components/Icon";
 import ComponentTable from "../components/ComponentTable";
 
-
 function ComponentAssociation() {
-
-  const ContentTable = () => {
-    return (
-      <>
-        <Dropdown options={gradeOptions} className={"w5 br2"} value={node} onSelect={onDropdownSelect} />
-        <div className="flex flex-start w-100 pa2">
-          <div className="w-25 flex flex-column">
-            <div className="b f7 pv2">Content Group</div>
-            <div className="pa2 b bg-accent-light f7 lh-copy mb2">Whole Group Content</div>
-            <div className="pv2">Decodables</div>
-          </div>
-          <div className="w-20 flex flex-column">
-            <div className="b f7 pv2">Content Type</div>
-            <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
-            <div className="pv2">Decodable Readers</div>
-          </div>
-          <div className="w-10 flex flex-column">
-            <div className="b f7 pv2 tc">Level Associated</div>
-            <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
-            <div className="pv2 tc">Unit</div>
-          </div>
-          <div className="w-10 flex flex-column">
-            <div className="b f7 pv2 tc">Counts</div>
-            <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
-            <div className="pv2 tc">5</div>
-          </div>
-          <div className="w-10 flex flex-column">
-            <div className="b f7 pv2 tc">Format</div>
-            <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
-            <div className="pv2 tc">Print</div>
-          </div>
-          <div className="flex-grow flex flex-column">
-            <div className="b f7 pv2">&nbsp;</div>
-            <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
-            <div className="flex">
-              <div className="f7 flex items-center justify-center mv1 pa1 ba b--accent br2 pointer accent mh2 dim" onClick={associate}>Associate Component</div>
-              <div className="f7 flex items-center justify-center mv1 pa1 ba b--accent br2 not-allowed accent mh2 ">Edit</div>
-              <div className="f7 flex items-center justify-center mv1 pa1 ba b--accent br2 not-allowed accent mh2 ">Delete</div>
-            </div>
-          </div>
-        </div>
-      </>
-    )
-  }
-
-  const AssociateSection = () => {
-    return (
-      <>
-        <div className="w3 f6 flex items-center justify-between mv2 pa2 bn accent pointer dim" onClick={reset}>
-          <Icon icon="left" /> Back
-        </div>
-        <div className="min-h-100 pa2">
-          <div className="mb2">Enter the IDs of Components you want to associate to:</div>
-          <div className="f7 pa2 bg-accent-light flex justify-between w-50">
-            <div><b>Content Group: </b> Decodables </div>
-            <div><b>Content Type: </b> Decodable Readers</div>
-            <div><b>Level Associated: </b> Unit</div>
-          </div>
-          <div className="flex flex-between w-100">
-            <div className="w-75 mt2">
-              <textarea className="f6 w-100 b--light-accent br2" rows={4} placeholder=" Enter IDs separated by a space" value={codes} onChange={handleCodeChange} onBlur={handleCodeChange}></textarea>
-            </div>
-            <div className="flex flex-column items-center w-25">
-              <div className="w-60 f7 flex items-center justify-between mv1 pa2 ba br2 pointer mh2 grow mia-btn" onClick={goToMia}>
-                Search Components <Icon icon="ext" />
-              </div>
-              <div className="w-60 f7 flex items-center justify-between mv1 pa2 ba br2 pointer mh2 grow mia-btn" onClick={goToMia}>
-                Create Components <Icon icon="ext" />
-              </div>
-            </div>
-          </div>
-          <div className="w4 f6 flex items-center justify-between mv2 pa2 ba b--accent bg-accent white pointer dim" onClick={importComponents}>
-            Import <Icon icon="download" />
-          </div>
-          {showList && <ComponentTable compCodes={compCodes} />}
-        </div>
-      </>
-    )
-  }
 
   const gradeOptions = [
     { id: 'Grade K', label: 'Grade K' },
@@ -134,10 +54,18 @@ function ComponentAssociation() {
   const renderSection = () => {
     switch (display) {
       case "Component Association":
-        return <AssociateSection />
+        return <AssociateSection 
+          reset={reset} 
+          codes={codes} 
+          handleCodeChange={handleCodeChange} 
+          goToMia={goToMia}
+          importComponents={importComponents}
+          showList={showList}
+          compCodes={compCodes} 
+          />
       case "Content Table":
       default:
-        return <ContentTable />
+        return <ContentTable associate={associate} gradeOptions={gradeOptions} node={node} onDropdownSelect={onDropdownSelect} />
     }
   }
 
@@ -149,6 +77,88 @@ function ComponentAssociation() {
     </div>
   )
 
+}
+
+
+function ContentTable ({associate, gradeOptions, node, onDropdownSelect}) {
+  return (
+    <>
+      <Dropdown options={gradeOptions} className={"w5 br2"} value={node} onSelect={onDropdownSelect} />
+      <div className="flex flex-start w-100 pa2">
+        <div className="w-25 flex flex-column">
+          <div className="b f7 pv2">Content Group</div>
+          <div className="pa2 b bg-accent-light f7 lh-copy mb2">Whole Group Content</div>
+          <div className="pv2">Decodables</div>
+        </div>
+        <div className="w-20 flex flex-column">
+          <div className="b f7 pv2">Content Type</div>
+          <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
+          <div className="pv2">Decodable Readers</div>
+        </div>
+        <div className="w-10 flex flex-column">
+          <div className="b f7 pv2 tc">Level Associated</div>
+          <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
+          <div className="pv2 tc">Unit</div>
+        </div>
+        <div className="w-10 flex flex-column">
+          <div className="b f7 pv2 tc">Counts</div>
+          <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
+          <div className="pv2 tc">5</div>
+        </div>
+        <div className="w-10 flex flex-column">
+          <div className="b f7 pv2 tc">Format</div>
+          <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
+          <div className="pv2 tc">Print</div>
+        </div>
+        <div className="flex-grow flex flex-column">
+          <div className="b f7 pv2">&nbsp;</div>
+          <div className="pa2 bg-accent-light f7 lh-copy accent-light mb2">&nbsp;</div>
+          <div className="flex">
+            <div className="f7 flex items-center justify-center mv1 pa1 ba b--accent br2 pointer accent mh2 dim" onClick={associate}>Associate Component</div>
+            <div className="f7 flex items-center justify-center mv1 pa1 ba b--accent br2 not-allowed accent mh2 ">Edit</div>
+            <div className="f7 flex items-center justify-center mv1 pa1 ba b--accent br2 not-allowed accent mh2 ">Delete</div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+
+function AssociateSection({reset, codes, handleCodeChange, goToMia, importComponents, showList, compCodes}) {
+  const [codeList, setCodeList] = useState(compCodes);
+  return (
+    <>
+      <div className="w3 f6 flex items-center justify-between mv2 pa2 bn accent pointer dim" onClick={reset}>
+        <Icon icon="left" /> Back
+      </div>
+      <div className="min-h-100 pa2">
+        <div className="mb2">Enter the IDs of Components you want to associate to:</div>
+        <div className="f7 pa2 bg-accent-light flex justify-between w-50">
+          <div><b>Content Group: </b> Decodables </div>
+          <div><b>Content Type: </b> Decodable Readers</div>
+          <div><b>Level Associated: </b> Unit</div>
+        </div>
+        <div className="flex flex-between w-100">
+          <div className="w-75 mt2">
+            <textarea className="f6 w-100 b--light-accent br2" rows={4} placeholder=" Enter IDs separated by a space" value={codes} onChange={handleCodeChange} onBlur={handleCodeChange}></textarea>
+          </div>
+          <div className="flex flex-column items-center w-25">
+            <div className="w-60 f7 flex items-center justify-between mv1 pa2 ba br2 pointer mh2 grow mia-btn" onClick={goToMia}>
+              Search Components <Icon icon="ext" />
+            </div>
+            <div className="w-60 f7 flex items-center justify-between mv1 pa2 ba br2 pointer mh2 grow mia-btn" onClick={goToMia}>
+              Create Components <Icon icon="ext" />
+            </div>
+          </div>
+        </div>
+        <div className="w4 f6 flex items-center justify-between mv2 pa2 ba b--accent bg-accent white pointer dim" onClick={importComponents}>
+          Import <Icon icon="download" />
+        </div>
+        {showList && <ComponentTable compCodes={codeList} />}
+      </div>
+    </>
+  )
 }
 
 export default ComponentAssociation;
