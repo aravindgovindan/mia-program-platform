@@ -16,7 +16,7 @@ function ComponentAssociation() {
 
   const [node, setNode] = useState(gradeOptions[0].label)
   const [display, setDisplay] = useState("Content Table")
-  const [codes, setCodes] = useState()
+  const [codes, setCodes] = useState('')
   const [showList, setShowList] = useState(false)
   const [compCodes, setCompCodes] = useState([])
 

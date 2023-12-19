@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useMemo, Component } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   createColumnHelper,
   flexRender,
@@ -8,9 +8,7 @@ import {
   useReactTable
 } from '@tanstack/react-table'
 import Icon from "./Icon";
-import sample from '../data/sample-table.json';
 
-const defaultData = sample
 const columnHelper = createColumnHelper()
 const sampleTitles = [
   "Whisk It Decodable Text (Take Home Book)",
@@ -31,23 +29,27 @@ const sampleTitles = [
   "My Skin's Got Skills Decodable Text (Take Home Book)]",
 ]
 
-function ComponentTable({compCodes}) {
+function ComponentTable({ compCodes }) {
 
-  
   const viewEditAttribute = (id) => {
     window.alert(`View/Edit clicked on '${id}'`);
   }
-  
-  const makeData = (codes) => {
-    return codes.map((code, i) => ({
+
+  const makeData = () => {
+    return compCodes.map((code, i) => ({
       compCode: code,
-      title: sampleTitles[i%16],
+      title: sampleTitles[i % 16],
       type: "Take Home Book",
     }))
   }
-  
-  const [data, setData] = useState(makeData(compCodes));
+
+  const [data, setData] = useState(makeData);
   const [sorting, setSorting] = useState([]);
+
+  useEffect(
+    () => setData(makeData),
+    [compCodes]
+  );
 
   const columns = useMemo(
     () => [
