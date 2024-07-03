@@ -13,7 +13,7 @@ function Tree({ treeData, levelData }) {
     let tempNode = treeData
     let newLevels = levels.map((level, index) => {
       let newLevel = { name: level.name, children: tempNode.map(i => i.name) }
-      tempNode = tempNode[newSelected[index]].children
+      tempNode = tempNode[newSelected[index]]?.children || []
       return newLevel
     })
     setSelectedNodes(newSelected);
@@ -32,19 +32,16 @@ function Tree({ treeData, levelData }) {
   return (
     <div className="tree flex-grow-1 flex flex-column">
       <div className="tree-container flex-grow-1 flex">
-        {levels.map((level, index) => {
-          return (
-            <Column
-              key={level.name}
-              title={level.name}
-              nodes={level.children}
-              selectedNode={selectedNodes[index]}
-              columnIndex={index} // Pass the column index
-              onNodeSelect={handleNodeSelect}
-              onEditModeToggle={() => handleEditModeToggle(index)}
-            />
-          )
-        })}
+        {levels.map((level, index) => level.children?.length ? <Column
+          key={level.name}
+          title={level.name}
+          nodes={level.children || []}
+          selectedNode={selectedNodes[index]}
+          columnIndex={index} // Pass the column index
+          onNodeSelect={handleNodeSelect}
+          onEditModeToggle={() => handleEditModeToggle(index)}
+        /> : ''
+        )}
       </div>
     </div>
   );

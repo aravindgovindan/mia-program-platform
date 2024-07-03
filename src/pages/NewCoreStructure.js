@@ -8,6 +8,7 @@ function NewCoreStructure() {
     {name: 'Grade', children: treeData.map(i => i.name)},
     {name: 'Unit', children: treeData[0].children.map(i => i.name)},
     {name: 'Week', children: treeData[0].children[0].children.map(i => i.name)},
+    {name: 'Day', children: []}
   ]
 
   return (

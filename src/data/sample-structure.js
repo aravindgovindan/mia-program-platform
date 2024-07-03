@@ -58,7 +58,28 @@ export const treeData = [
         children: [
           {
             name: 'Week 1',
-            children: []
+            children: [
+              {
+                name: 'Day 1',
+                children: []
+              },
+              {
+                name: 'Day 2',
+                children: []
+              },
+              {
+                name: 'Day 3',
+                children: []
+              },
+              {
+                name: 'Day 4',
+                children: []
+              },
+              {
+                name: 'Day 5',
+                children: []
+              },
+            ]
           }, {
             name: 'Week 2',
             children: []

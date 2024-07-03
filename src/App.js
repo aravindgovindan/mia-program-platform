@@ -15,7 +15,7 @@ function App() {
 
   const navItems = [
     { label: 'New Core', icon: 'advance', link: '/' },
-    { label: 'Phonics Intervention', icon: 'speak', link: '/PhonicsIntervention' },
+    // { label: 'Phonics Intervention', icon: 'speak', link: '/PhonicsIntervention' },
     { label: 'Base Structure', icon: 'base', link: '/BaseStructure' },
     { label: 'Attribute Table', icon: 'table', link: '/AttributeTable' },
     { label: 'Component Association', icon:'link', link: '/ComponentAssociation' },
